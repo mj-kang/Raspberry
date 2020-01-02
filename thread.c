@@ -26,9 +26,7 @@ int main()
 	pthread_t p_thread;
 	char p1[] = "thread1";
 	char p2[] = "main";
-	int status; //무엇?
-
-	thread_function((void*)p2);
+	int status;
 
 	pthread_create(&p_thread, NULL, thread_function, (void *)p1);
 
@@ -38,7 +36,7 @@ int main()
 		exit(0);
 	}
 
-	
+	thread_function((void*)p2);
 
 	pthread_join(p_thread, (void**)&status);
 	printf("bye~\n");
